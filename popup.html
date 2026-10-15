@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Media Utils</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <section>
+    <label class="row heading">
+      <span>Master volume</span>
+      <input type="checkbox" id="capture" class="switch">
+    </label>
+    <div class="row">
+      <input type="range" id="volume" min="0" max="200" step="1" value="100" disabled>
+      <output id="volume-value">100%</output>
+      <button type="button" id="reset" disabled>Reset</button>
+    </div>
+    <label class="row check">
+      <input type="checkbox" id="remember">
+      <span id="remember-label">Remember for this site</span>
+    </label>
+  </section>
+
+  <section>
+    <div class="heading">Video</div>
+    <fieldset id="targets" hidden>
+      <legend>Target video</legend>
+      <div id="target-list"></div>
+    </fieldset>
+    <div class="buttons">
+      <button type="button" data-action="pictureInPicture">Picture-in-Picture</button>
+      <button type="button" data-action="maximize">Maximize in tab</button>
+      <button type="button" data-action="fullscreen">Fullscreen</button>
+    </div>
+    <a href="#" id="shortcuts" class="note">Change shortcuts</a>
+  </section>
+
+  <section>
+    <label class="row check">
+      <input type="checkbox" id="shorts">
+      <span>Open YouTube Shorts as regular videos</span>
+    </label>
+  </section>
+
+  <p id="status" class="note" role="status"></p>
+
+  <script src="core.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
